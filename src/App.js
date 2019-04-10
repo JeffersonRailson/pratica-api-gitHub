@@ -4,7 +4,8 @@ import {
   Text,
   View,
   TextInput,
-  Button
+  Button,
+  ScrollView
 } from "react-native";
 import api from "./services/api";
 
@@ -28,6 +29,7 @@ export default class App extends Component {
   render() {
     const { data } = this.state;
     return (
+      <ScrollView style={styles.conteinerScroll} >
       <View style={styles.container}>
           <Text style={{
             fontSize: 25,
@@ -67,11 +69,16 @@ export default class App extends Component {
           </View>
         }
       </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  conteinerScroll:{
+    flex: 1,
+    backgroundColor: "#b0c4de",
+  },
   container: {
     flex: 1,
     justifyContent: 'flex-start',
